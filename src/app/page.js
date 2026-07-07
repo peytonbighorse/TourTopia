@@ -9,15 +9,13 @@ export default function Home() {
     //Main page container
     <div className={styles.page}>
       <div className={styles.main}>
-
         {/* Header section */}
         <div className={styles.header}>
-          <h2>welcome to</h2>
           <h1 className={styles.title}>TOURTOPIA</h1>
         </div>
 
         {/* Main content section */}
-
+        <h2 className={styles.subtitle}>- LOG IN -</h2>
         <div>
 
 

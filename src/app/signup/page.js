@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import styles from "../page.module.css";
 import { useRouter } from 'next/navigation'
 
@@ -15,12 +14,15 @@ export default function Home() {
                 <div className={styles.header}>
                     <h1 className={styles.title}>TOURTOPIA</h1>
                 </div>
-                <h2>SIGN UP</h2>
+                {/* Sign up form section */}
+                <h2 className={styles.subtitle}>- SIGN UP -</h2>
                 <form className={styles.form}>
                     <input type="email" placeholder="email address" />
                     <input type="text" placeholder="username" />
                     <input type="password" placeholder="password" />
-                    <button className={styles.btn}>sign up</button>
+                    <button className={styles.btn} onClick={(e) => { e.preventDefault(); router.push('/profile'); }}>
+                        sign up
+                    </button>
                 </form>
             </div>
 
