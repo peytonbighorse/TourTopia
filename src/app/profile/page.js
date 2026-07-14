@@ -11,6 +11,15 @@ export default function Home() {
         <div className={styles.page}>
             {/* Main content section */}
             <div className={styles.main}>
+                <div className={styles.navbar}>
+                    <div /*Left Side */>
+                        <Link href="/" className={styles.nav_link}>logout</Link>
+                    </div>
+                    <div /*Right Side */>
+                        <Link href="#" className={styles.nav_link}>join tour</Link>
+                        <Link href="#" className={styles.nav_link}>create tour</Link>
+                    </div>
+                </div>
                 {/* Header section */}
                 <div className={styles.header}>
                     <h1 className={styles.title}>TOURTOPIA</h1>
@@ -19,11 +28,12 @@ export default function Home() {
                 <div className={styles.pfp}>
                     <h2>HELLO USER :{')'}</h2>
                     <hr />
+
                     <div className={styles.profile_body}>
                         <div className={styles.upcoming}>
                             <h3>UPCOMING SHOWS</h3>
                             <div className={styles.shows}>
-                                <Link className={styles.show} href="#">
+                                <Link className={styles.pfp_module} href="#">
                                     <div className={styles.date}>
                                         <div>JUL</div>
                                         <div>14</div>
@@ -35,7 +45,7 @@ export default function Home() {
                                         <div>OK</div>
                                     </div>
                                 </Link>
-                                <Link className={styles.show} href="#">
+                                <Link className={styles.pfp_module} href="#">
                                     <div className={styles.date}>
                                         <div>JUL</div>
                                         <div>14</div>
@@ -47,7 +57,7 @@ export default function Home() {
                                         <div>OK</div>
                                     </div>
                                 </Link>
-                                <Link className={styles.show} href="#">
+                                <Link className={styles.pfp_module} href="#">
                                     <div className={styles.date}>
                                         <div>JUL</div>
                                         <div>14</div>
@@ -59,7 +69,7 @@ export default function Home() {
                                         <div>OK</div>
                                     </div>
                                 </Link>
-                                <Link className={styles.show} href="#">
+                                <Link className={styles.pfp_module} href="#">
                                     <div className={styles.date}>
                                         <div>JUL</div>
                                         <div>14</div>
@@ -73,8 +83,16 @@ export default function Home() {
                                 </Link>
                             </div>
                         </div>
-                        <div className={styles.tours}>
+                        <div>
                             <h3>TOURS</h3>
+                            <div className={styles.tours}>
+                                <Link className={styles.pfp_module} href="#">
+                                    <div className={styles.tour}>
+                                        <div>SKATING POLLY SUMMER 2026</div>
+                                        <div>June 8, 2026 - August 3, 2026</div>
+                                    </div>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

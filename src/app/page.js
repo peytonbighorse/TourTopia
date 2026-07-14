@@ -1,10 +1,11 @@
-
+'use client'
 import styles from "./page.module.css";
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 
 export default function Home() {
-
+  const router = useRouter();
   return (
     //Main page container
     <div className={styles.page}>
@@ -22,7 +23,9 @@ export default function Home() {
           <form className={styles.form}>
             <input type="text" placeholder="username" />
             <input type="password" placeholder="password" />
-            <button className={styles.btn}>login</button>
+            <button className={styles.btn} onClick={(e) => { e.preventDefault(); router.push('/profile'); }}>
+              login
+            </button>
           </form>
           <Link className={styles.link} href="./signup">
             sign up

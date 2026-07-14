@@ -17,6 +17,11 @@
   --btn-hover: #c890b1;
   --btn-border: #B76A9B;
 
+  --module-border: #e1bed4;
+  --module-bg: #FFFAFD;
+
+  --nav-link: #c890b1;
+
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -47,15 +52,36 @@
 
 }
 
+.navbar {
+  width: 85%;
+  position: fixed;
+  top: 65;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.navbar div {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar div:last-child {
+  text-align: right;
+}
+
+.nav_link {
+  color: var(--nav-link);
+  text-decoration: underline;
+}
+
 .header {
   text-align: center;
   padding-bottom: 20px;
 }
 
 .main {
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-green) var(--foreground);
+
   display: flex;
   flex: 1;
   width: 98vw;
@@ -139,18 +165,22 @@
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-green) var(--foreground);
 }
 
 .pfp h3 {
   text-decoration: underline;
 }
 
-.shows {
+.shows,
+.tours {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 8px;
 }
+
 
 .date {
   display: flex;
@@ -158,82 +188,32 @@
   margin-right: 16px;
 }
 
-.date div,
-.venue div {
-  padding: 0;
-  margin: 0;
-  line-height: 1.2;
+.venue div:first-child,
+.tour div:first-child {
+  color: var(--text-secondary);
+  font-weight: bold;
 }
 
-.show {
+
+.venue div,
+.tour div {
+  padding: 0;
+  margin: 0;
+}
+
+.pfp_module {
   display: flex;
   justify-content: left;
   align-items: center;
   padding: 10px 20px 10px 10px;
-  border-radius: 10px;
   color: var(--text-primary);
-  background-color: var(--btn-bg);
-  border: 4px solid var(--btn-border);
-  transition: 0.2s;
+  background-color: var(--module-bg);
+  border: 2px solid var(--module-border);
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
   cursor: pointer;
   width: auto;
   font-size: 16px;
-}
-
-
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
 }
 
 a.primary {
@@ -274,8 +254,6 @@ a.secondary {
     font-size: 40px;
   }
 
-
-
   .form {
     display: flex;
     flex-direction: column;
@@ -287,6 +265,16 @@ a.secondary {
   }
 
   /*Profile*/
+
+  .navbar {
+    width: 76%;
+    position: absolute;
+    top: 35;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .profile_body {
     display: flex;
     flex-direction: column;
@@ -295,23 +283,44 @@ a.secondary {
   }
 
   .shows {
+    gap: 10px;
+  }
+
+  .pfp_module {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .profile_body h3 {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .tours {
     display: flex;
     flex-direction: column;
     gap: 16px;
     margin-top: 8px;
   }
 
+  .date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 20px;
+    line-height: 1;
+    height: 100%;
+    margin-right: 5px;
 
-
-  .intro {
-    gap: 16px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+  .venue {
+    text-align: right;
+
   }
+
+
 }
 
 @media (prefers-color-scheme: dark) {
