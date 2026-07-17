@@ -1,11 +1,13 @@
 'use client';
 import styles from "../page.module.css";
 import Link from 'next/link'
+import Modal from "../components/modal";
+import { useState } from "react";
 //import { useRouter } from 'next/navigation'
 
 export default function Home() {
     //const router = useRouter();
-
+    const [showModal, setShowModal] = useState(false);
     return (
         //Main page container
         <div className={styles.page}>
@@ -16,7 +18,17 @@ export default function Home() {
                         <Link href="/" className={styles.nav_link}>logout</Link>
                     </div>
                     <div /*Right Side */>
-                        <Link href="#" className={styles.nav_link}>join tour</Link>
+                        <button onClick={() => setShowModal(true)} className={styles.nav_link}>join tour</button>
+                        {showModal &&
+                            <Modal onClose={() => setShowModal(false)} title="Enter Your Invite Code" >
+
+                                <form>
+
+                                    <input type="text" placeholder="invite code"></input>
+                                    <input type="submit" placeholder="submit"></input>
+                                </form>
+                            </Modal>
+                        }
                         <Link href="#" className={styles.nav_link}>create tour</Link>
                     </div>
                 </div>
@@ -28,6 +40,7 @@ export default function Home() {
                 <div className={styles.pfp}>
                     <h2>HELLO USER :{')'}</h2>
                     <hr />
+                    <div id="modal-root"></div>
 
                     <div className={styles.profile_body}>
                         <div className={styles.upcoming}>
